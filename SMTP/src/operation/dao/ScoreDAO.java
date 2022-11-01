@@ -13,14 +13,14 @@ import academy.Score;
 import academy.Student;
 
 public class ScoreDAO {
-	String driver = "oracle.jdbc.driver.OracleDriver"; // 6Çà ~ 9Çà µ¥ÀÌÅÍº£ÀÌ½º Á¢¼ÓÀ» À§ÇÑ 4°¡Áö Á¤º¸¸¦ String º¯¼ö¿¡ ÀúÀå.
-	String url = "jdbc:oracle:thin:@localhost:1521:xe";
+	String driver = "oracle.jdbc.driver.OracleDriver"; // 6í–‰ ~ 9í–‰ ë°ì´í„°ë² ì´ìŠ¤ ì ‘ì†ì„ ìœ„í•œ 4ê°€ì§€ ì •ë³´ë¥¼ String ë³€ìˆ˜ì— ì €ì¥.
+	String url = "jdbc:oracle:thin:@10.100.102.26:1521:xe";
 	String userid = "scott";
 	String passwd = "tiger";
 
 	public ScoreDAO() {
 		try {
-			Class.forName(driver); // µå¶óÀÌ¹ö¸¦ ·ÎµùÇÏ´Â ÃÊ±âÈ­ ÀÛ¾÷À» »ı¼ºÀÚ¿¡¼­ ±¸ÇöÇÑ´Ù.
+			Class.forName(driver); // ë“œë¼ì´ë²„ë¥¼ ë¡œë”©í•˜ëŠ” ì´ˆê¸°í™” ì‘ì—…ì„ ìƒì„±ìì—ì„œ êµ¬í˜„í•œë‹¤.
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
