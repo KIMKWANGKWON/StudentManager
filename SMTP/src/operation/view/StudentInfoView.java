@@ -21,9 +21,9 @@ import operation.dao.ScoreDAO;
 public class StudentInfoView extends JFrame {
 	boolean isAble = false;
 	Vector data;
-	JLabel pointSum = new JLabel("ÃÑÁ¡ : ");
+	JLabel pointSum = new JLabel("ì´ì  : ");
 	StudentInfoView(Student student) {
-		super(student.getName() + "ÀÇ Á¤º¸");
+		super(student.getName() + "ì˜ ì •ë³´");
 		Container c = getContentPane();
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		JTable table;
@@ -47,15 +47,15 @@ public class StudentInfoView extends JFrame {
 		scroll.setBounds(0, 0, 300, 300);
 		add(scroll);
 
-		JButton updateBtn = new JButton("¼öÁ¤");
+		JButton updateBtn = new JButton("ìˆ˜ì •");
 		updateBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (updateBtn.getText().equals("¼öÁ¤")) {
+				if (updateBtn.getText().equals("ìˆ˜ì •")) {
 					isAble = true;
-					updateBtn.setText("¿Ï·á");
+					updateBtn.setText("ì™„ë£Œ");
 				} else {
 					isAble = false;
-					updateBtn.setText("¼öÁ¤");
+					updateBtn.setText("ìˆ˜ì •");
 //					HashSet<Score> changedScoreList = new HashSet();
 					scoreList.clear();
 					for (int i = 0; i < table.getRowCount(); i++) {
@@ -73,7 +73,7 @@ public class StudentInfoView extends JFrame {
 					}
 					data = setToVector(scoreList);
 					model.setDataVector(data, column);
-					pointSum.setText("ÃÑÁ¡ : ".concat(pointSumOpe(table).toString()));
+					pointSum.setText("ì´ì  : ".concat(pointSumOpe(table).toString()));
 					table.updateUI();
 				}
 			}
@@ -81,7 +81,7 @@ public class StudentInfoView extends JFrame {
 		updateBtn.setBounds(100, 300, 75, 20);
 		c.add(updateBtn);
 
-		JButton delBtn = new JButton("»èÁ¦");
+		JButton delBtn = new JButton("ì‚­ì œ");
 		delBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int rmvId = student.getId();
@@ -91,13 +91,13 @@ public class StudentInfoView extends JFrame {
 				model.fireTableRowsUpdated(0, table.getSelectedRow());
 				data = setToVector(scoreList);
 				model.setDataVector(data, column);
-				pointSum.setText("ÃÑÁ¡ : ".concat(pointSumOpe(table).toString()));
+				pointSum.setText("ì´ì  : ".concat(pointSumOpe(table).toString()));
 				table.updateUI();
 			}
 		});
 		delBtn.setBounds(200, 300, 75, 20);
 
-		pointSum.setText("ÃÑÁ¡ : ".concat(pointSumOpe(table).toString()));
+		pointSum.setText("ì´ì  : ".concat(pointSumOpe(table).toString()));
 		pointSum.setBounds(20,290,150,50);
 		c.add(pointSum);
 		
@@ -130,9 +130,9 @@ public class StudentInfoView extends JFrame {
 
 	private Vector getColumn() {
 		Vector column = new Vector();
-		column.add("°ú¸ñ¸í");
-//		column.add("ÇĞ¹ø");
-		column.add("Á¡¼ö");
+		column.add("ê³¼ëª©ëª…");
+//		column.add("ï¿½Ğ¹ï¿½");
+		column.add("ì ìˆ˜");
 		return column;
 	}
 

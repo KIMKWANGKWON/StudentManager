@@ -16,7 +16,7 @@ import operation.dao.StudentDAO;
 
 public class StudentListView extends JFrame {
 	StudentListView(Teacher T) {
-		super("ÇĞ»ı ¸ñ·Ï");
+		super("í•™ìƒ ëª©ë¡");
 		JTable table;
 		JScrollPane scroll;
 		DefaultTableModel model;
@@ -62,8 +62,5 @@ public class StudentListView extends JFrame {
 		column.add("Name");
 		column.add("Room");
 		return column;
-	}
-	public static void main(String args[]) {
-		new StudentListView(new Teacher());
 	}
 }

@@ -18,7 +18,7 @@ import operation.dao.TeacherDAO;
 
 public class LoginView extends JFrame{
 	public LoginView() {
-		super("·Î±×ÀÎ ¸Ş´º");
+		super("ë¡œê·¸ì¸");
 		Container c = getContentPane();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		c.setLayout(null);
@@ -39,25 +39,25 @@ public class LoginView extends JFrame{
 		pwdLa.setBounds(5,70,80,40);
 		pwdInput.setBounds(80,75,150,30);
 		
-		JButton loginBtn = new JButton("·Î±×ÀÎ");
+		JButton loginBtn = new JButton("ë¡œê·¸ì¸");
 		loginBtn.setBounds(80,110,80,30);
 		loginBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(idInput.getText().equals("") || pwdInput.getText().equals("")) {
-					JOptionPane.showMessageDialog(c,"ID¿Í Password¸¦ ÀÔ·ÂÇÏ¼¼¿ä!","Message", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(c,"IDì™€ Passwordë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”!","Message", JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 				HashMap<String,Teacher> list = new TeacherDAO().select("SELECT * FROM TEACHER");
 				Teacher t = list.get(idInput.getText());
 				if(t == null || !(t.getPwd().equals(pwdInput.getText()))) {
-					JOptionPane.showMessageDialog(c,"¾ÆÀÌµğ ¶Ç´Â ºñ¹Ğ¹øÈ£¸¦ Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.","Message", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(c,"ID ë˜ëŠ” Passwordê°€ ì˜ëª» ì…ë ¥ëìŠµë‹ˆë‹¤.","Message", JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 				new StudentListView(t);
 				dispose();
 			}
 		});
-		JButton regisBtn = new JButton("°¡ÀÔ");
+		JButton regisBtn = new JButton("ê°€ì…");
 		regisBtn.setBounds(170,110,60,30);
 		
 		c.add(logoImg);
